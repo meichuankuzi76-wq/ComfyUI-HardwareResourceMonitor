@@ -4,7 +4,6 @@
 
 独立开发的 ComfyUI 资源监控插件，使用中文界面，在主工具栏实时显示 CPU、内存、GPU、显存、温度和功率。监控栏固定宽度、透明背景，内容可横向滑动；设置入口位于监控栏旁边。
 
-不使用 ComfyUI-Crystools 源码。
 
 ![界面预览](screenshot.png)
 
@@ -38,8 +37,6 @@ Windows 整合包请使用其内置 Python；例如在插件目录执行：
 3. 重启 ComfyUI，浏览器按 Ctrl+F5 刷新。
 4. 点击监控栏右侧“设置”，调整刷新间隔与显示项目。
 
-从旧名称 ComfyUI-PulseDock 升级时，只保留新版启用：将旧目录移出 custom_nodes，或改名为 `ComfyUI-PulseDock.disabled`。新版首次读取时可继承旧浏览器显示配置。
-
 ## 支持范围与注意事项
 
 | 平台 | 采集方式 | 当前范围 |
@@ -50,7 +47,6 @@ Windows 整合包请使用其内置 Python；例如在插件目录执行：
 | Linux / AMD、Intel 等 | DRM / sysfs / hwmon | 仅采集驱动公开指标，Intel 的完整指标覆盖尚未实现 |
 
 - 已在 Windows RTX 3080 实机验证。AMD、Intel 及 Linux 尚未进行实机验证，不能保证所有显卡的全部指标可用。
-- GPU-Z 并非运行依赖；Windows 随包提供官方 LibreHardwareMonitor 0.9.6 库，不需要单独启动该软件。
 - 部分传感器需要管理员权限。读数“未支持”也可能是驱动或硬件未开放该项，并不等于显卡故障。
 - 集成显卡共享内存不会被伪装成独立显存容量。
 - 容量标签使用 GB，但按 1024³ 字节换算，以保持既有读数习惯；严格计量术语对应 GiB。
@@ -62,7 +58,7 @@ Windows 整合包请使用其内置 Python；例如在插件目录执行：
 
 ## 与其他资源监控插件的冲突说明
 
-**建议只启用一个资源监控插件。** 与 ComfyUI-Crystools、ComfyUI-Advanced-Monitor、其他硬件监控插件或旧 ComfyUI-PulseDock 同时启用时，可能出现：
+**建议只启用一个资源监控插件。** 与 ComfyUI-Crystools、ComfyUI-Advanced-Monitor、其他硬件监控插件同时启用时，可能出现：
 
 - 两套监控栏重复显示，挤占主工具栏空间。
 - 工具栏插入位置或第三方主题样式互相影响，导致遮挡、换行或显示异常。
@@ -92,8 +88,6 @@ Windows 整合包请使用其内置 Python；例如在插件目录执行：
 另使用 NVIDIA 官方 [nvidia-ml-py](https://pypi.org/project/nvidia-ml-py/) Python NVML 绑定。其已安装包元数据没有声明对应 GitHub 源码仓库，因此不将同名或第三方 pynvml 仓库误标为来源。NVML 运行库由 NVIDIA 驱动提供。
 
 随 LibreHardwareMonitor 官方发行包附带的其他 DLL 及许可证，以 `lib/windows/THIRD-PARTY-NOTICES.txt` 和上游 v0.9.6 发行源码为准。插件原创前后端代码与这些依赖分别遵循各自许可。
-
-GPU-Z 仅作为用户提出的功能参考，不是依赖，未复制其源码；ComfyUI-Crystools 仅作为早期布局参考及同类冲突示例，本插件不使用其源码或二进制。
 
 ## 开源许可与第三方库
 
