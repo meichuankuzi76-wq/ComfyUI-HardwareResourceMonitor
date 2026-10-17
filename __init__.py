@@ -10,4 +10,4 @@ monitor = Monitor()
 
 @PromptServer.instance.routes.get('/hardware-resource-monitor/stats')
 async def stats(request):
-    return web.json_response(await asyncio.to_thread(monitor.sample))
+    return web.json_response(await asyncio.to_thread(monitor.sample,request.query.get('disk',''),request.query.get('gpu','')))

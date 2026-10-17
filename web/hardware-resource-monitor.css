@@ -1,44 +1,104 @@
-#hardware-resource-monitor,#hardware-resource-monitor-panel{box-sizing:border-box;font-family:'Microsoft YaHei',system-ui,sans-serif;color:#d5e4ef}
+#hardware-resource-monitor,#hardware-resource-monitor-panel{box-sizing:border-box;color:#d1e2ef;font-family:'Microsoft YaHei',system-ui,sans-serif}
 #hardware-resource-monitor *,#hardware-resource-monitor-panel *{box-sizing:border-box}
-#hardware-resource-monitor{display:flex!important;flex:0 0 auto!important;min-width:0!important;max-width:calc(100vw - 32px);width:460px;height:64px!important;align-self:center;order:-1;border:1px solid transparent;border-radius:0;background:transparent;overflow:hidden;margin:0 5px;align-items:stretch;padding:4px 3px!important;gap:2px}
-#hardware-resource-monitor .hrm-scroll{display:flex;flex:1 1 0;min-width:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior:contain;outline:none}
+#hardware-resource-monitor{display:flex!important;flex:0 0 auto!important;align-self:center;width:460px;max-width:calc(100vw - 32px);min-width:0;height:60px!important;padding:4px 1px!important;margin:0 4px;background:transparent;border:0;gap:3px;order:-1;overflow:hidden}
+#hardware-resource-monitor.hrm-waiting{display:none!important}
+#hardware-resource-monitor .hrm-scroll{display:flex;flex:1 1 0;min-width:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior:contain}
 #hardware-resource-monitor .hrm-scroll::-webkit-scrollbar{display:none}
-#hardware-resource-monitor .hrm-scroll:focus-visible{box-shadow:inset 0 0 0 1px #427b9d;border-radius:3px}
-#hardware-resource-monitor button,#hardware-resource-monitor-panel button{font:inherit;cursor:pointer}
-#hardware-resource-monitor .hrm-nav{border:0;background:none;color:#6eadd1;width:15px;flex:0 0 15px;padding:0;font-size:20px!important}
-#hardware-resource-monitor .hrm-tools{width:39px;flex:0 0 39px;border:1px solid transparent;background:transparent;color:#6acfff;border-radius:6px;font-size:18px!important;padding:2px!important}
-#hardware-resource-monitor .hrm-tools span{display:block;font-size:10px!important;line-height:12px!important;margin:2px 0 0!important}
-#hardware-resource-monitor .hrm-card{display:grid!important;grid-template-columns:17px max-content 3px;grid-template-rows:11px 14px 11px;column-gap:4px;row-gap:1px;align-content:center;align-items:center;width:max-content;min-width:72px;flex:0 0 auto!important;padding:0 5px!important;border-right:0;text-align:left!important}
-#hardware-resource-monitor .hrm-card.hrm-wide{min-width:104px}
+#hardware-resource-monitor button,#hardware-resource-monitor-panel button{font-family:inherit;cursor:pointer}
+#hardware-resource-monitor .hrm-nav{flex:0 0 13px;width:13px;padding:0!important;border:0;background:none;color:#75b0ce;font-size:18px!important}
+#hardware-resource-monitor .hrm-settings{flex:0 0 33px;width:33px;padding:0!important;border:0;background:none;color:#70c8ec;font-size:11px!important;white-space:nowrap}
+#hardware-resource-monitor .hrm-settings:hover{color:#c1ebff}
+#hardware-resource-monitor .hrm-card{display:grid;grid-template-columns:max-content 3px;grid-template-rows:11px 15px 11px;gap:1px 5px;align-content:center;align-items:center;flex:0 0 auto;min-width:66px;padding:0 7px!important;background:none;border:0}
 #hardware-resource-monitor .hrm-card[hidden]{display:none!important}
-#hardware-resource-monitor .hrm-label{display:contents!important}
-#hardware-resource-monitor .hrm-label span{grid-column:2;grid-row:1;font-size:10px!important;line-height:12px!important;color:#9fbed4;white-space:nowrap;margin:0!important;padding:0!important}
-#hardware-resource-monitor svg{grid-column:1;grid-row:1/4;width:17px!important;height:21px!important;align-self:center;color:var(--accent)}
-#hardware-resource-monitor strong{grid-column:2;grid-row:2;display:block!important;font-size:12px!important;line-height:14px!important;color:var(--accent);white-space:nowrap;font-weight:500;margin:0!important;padding:0!important}
-#hardware-resource-monitor small{grid-column:2;grid-row:3;display:block!important;font-size:9px!important;line-height:11px!important;height:11px!important;white-space:nowrap;color:#a2bdd1;margin:0!important;padding:0!important}
-#hardware-resource-monitor .hrm-track{grid-column:3;grid-row:1/4;width:3px;height:36px;align-self:center;position:relative;border-radius:3px;background:#243c50;margin:0!important;overflow:hidden}
-#hardware-resource-monitor .hrm-track i{display:block;position:absolute;bottom:0;left:0;width:100%;height:0;background:var(--accent);transition:height .4s}
-#hardware-resource-monitor.hrm-waiting{display:none!important}#hardware-resource-monitor.hrm-offline{border-color:#af6565}#hardware-resource-monitor-panel{position:fixed;z-index:10000;width:370px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow:auto;border:1px solid #355770;border-radius:10px;background:#131f2b;box-shadow:0 12px 40px #0009;padding:17px;font-size:12px}#hardware-resource-monitor-panel[hidden]{display:none!important}#hardware-resource-monitor-panel .hrm-heading{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #2c4051;padding-bottom:13px}#hardware-resource-monitor-panel .hrm-heading b{font-size:17px}#hardware-resource-monitor-panel .hrm-heading small{display:block;margin-top:4px;font-size:10px;color:#779ab5}#hardware-resource-monitor-panel .hrm-heading button{border:0;background:none;color:#b2c9da;font-size:24px}#hardware-resource-monitor-panel .hrm-fields{display:flex;flex-wrap:wrap;align-items:flex-start;gap:12px;margin-top:15px}#hardware-resource-monitor-panel label{color:#b2cadd}#hardware-resource-monitor-panel select{width:100%;min-width:0;font:inherit;background:#1b2e3e;color:#d9e8f1;border:1px solid #355068;padding:7px;border-radius:5px;margin-top:6px}#hardware-resource-monitor-panel .hrm-section{color:#77b3d5;margin:20px 0 10px}#hardware-resource-monitor-panel .hrm-checks{display:grid;grid-template-columns:1fr 1fr;gap:14px}#hardware-resource-monitor-panel .hrm-checks label{display:flex;align-items:center;gap:6px}#hardware-resource-monitor-panel input{accent-color:#168fea}#hardware-resource-monitor-panel .hrm-help{font-size:11px;color:#8ba3b7;line-height:1.7;margin:16px 0}#hardware-resource-monitor-panel .hrm-diagnostic{font-size:11px;padding:9px;background:#1a2b3b;border-radius:5px;overflow-wrap:anywhere;color:#85b8d6}#hardware-resource-monitor-panel .hrm-footer{display:flex;justify-content:space-between;border-top:1px solid #294154;padding-top:13px}#hardware-resource-monitor-panel .hrm-footer button{border:1px solid #345875;background:#1b3449;color:#b6dcf1;border-radius:5px;padding:7px 10px;font-size:11px}
-#hardware-resource-monitor-panel .hrm-fields label:first-child{flex:0 0 86px}
-#hardware-resource-monitor-panel .hrm-fields label:last-child{flex:0 1 auto;min-width:0}
-#hardware-resource-monitor-panel .hrm-fields label:last-child select{width:auto;max-width:224px}
+#hardware-resource-monitor .hrm-label{grid-column:1;grid-row:1;font-size:10px!important;line-height:11px!important;white-space:nowrap;color:#a0b9cc;margin:0!important}
+#hardware-resource-monitor strong{grid-column:1;grid-row:2;font-size:12px!important;line-height:15px!important;font-weight:500!important;color:var(--accent);white-space:nowrap;margin:0!important;padding:0!important}
+#hardware-resource-monitor small{grid-column:1;grid-row:3;font-size:9px!important;line-height:11px!important;height:11px;white-space:nowrap;color:#9ab6cb;margin:0!important;padding:0!important}
+#hardware-resource-monitor .hrm-track{grid-column:2;grid-row:1/4;position:relative;width:3px;height:35px;border-radius:3px;overflow:hidden;background:#243d4e}
+#hardware-resource-monitor .hrm-track i,#hardware-resource-monitor-panel .hrm-track i{position:absolute;bottom:0;left:0;display:block;width:100%;background:var(--accent);transition:height .4s}
+#hardware-resource-monitor .hrm-track[hidden],#hardware-resource-monitor-panel .hrm-track[hidden]{display:none!important}
+#hardware-resource-monitor-panel{position:fixed;z-index:10000;width:610px;max-width:calc(100vw - 16px);max-height:calc(100vh - 16px);overflow:auto;background:#14202b;border:1px solid #345266;border-radius:9px;padding:18px;font-size:12px;box-shadow:0 10px 35px #0008}
+#hardware-resource-monitor-panel[hidden]{display:none!important}
+#hardware-resource-monitor-panel .hrm-heading{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;border-bottom:1px solid #294251}
+#hardware-resource-monitor-panel .hrm-heading b{font-size:17px}
+#hardware-resource-monitor-panel .hrm-heading small{display:block;font-size:10px;color:#759bb7;margin-top:4px}
+#hardware-resource-monitor-panel .hrm-heading button{background:none;border:0;color:#8baec6;font-size:24px}
+#hardware-resource-monitor-panel .hrm-sampling{font-size:10px;color:#77a892;padding-top:12px}
+#hardware-resource-monitor-panel .hrm-section{color:#8db8d4;font-size:11px;margin:15px 0 7px}
+#hardware-resource-monitor-panel .hrm-cpu-info{font-size:11px;color:#bdd9e9;padding:8px 10px;background:#1a2b39;border:1px solid #2a4558;border-radius:5px;margin-bottom:6px;overflow-wrap:anywhere}
+#hardware-resource-monitor-panel .hrm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+#hardware-resource-monitor-panel [data-group="disk"]{grid-template-columns:repeat(3,minmax(0,1fr))}
+#hardware-resource-monitor-panel [data-group="system"]{grid-template-columns:minmax(0,1fr)}
+#hardware-resource-monitor-panel .hrm-card{position:relative;min-width:0;padding:9px 12px 9px 9px;background:#1a2c3a;border:1px solid #2b4456;border-radius:5px;overflow:hidden}
+#hardware-resource-monitor-panel .hrm-card[data-id="virtual"]{grid-column:span 2}
+#hardware-resource-monitor-panel .hrm-label{display:block;font-size:10px;line-height:13px;color:#8eafc6}
+#hardware-resource-monitor-panel .hrm-card strong{display:block;font-size:13px;line-height:21px;font-weight:500;color:var(--accent);margin:0;white-space:nowrap}
+#hardware-resource-monitor-panel .hrm-card small{display:block;font-size:9px;line-height:13px;color:#88a9c1;overflow-wrap:anywhere}
+#hardware-resource-monitor-panel .hrm-track{position:absolute;right:4px;top:9px;bottom:9px;width:2px;overflow:hidden;border-radius:2px;background:#2a4052}
+#hardware-resource-monitor-panel .hrm-fields{display:flex;flex-wrap:wrap;gap:10px;margin-top:15px;border-top:1px solid #2c4353;padding-top:12px}
+#hardware-resource-monitor-panel .hrm-fields label{display:block;font-size:10px;color:#8fadc3;min-width:0}
+#hardware-resource-monitor-panel .hrm-fields select{display:block;max-width:220px;width:auto;font:inherit;margin-top:5px;background:#1a3042;color:#d1e4f1;border:1px solid #35546a;border-radius:5px;padding:6px}
+#hardware-resource-monitor-panel .hrm-presets{display:flex;flex-wrap:wrap;gap:5px}
+#hardware-resource-monitor-panel .hrm-presets button,#hardware-resource-monitor-panel .hrm-footer button{font-size:11px;border:1px solid #36546c;background:#1b3042;color:#a8c7df;border-radius:5px;padding:6px 9px}
+#hardware-resource-monitor-panel .hrm-presets button.active{background:#164b6d;color:#83d9ff;border-color:#328cbb}
+#hardware-resource-monitor-panel .hrm-checks{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px 6px}
+#hardware-resource-monitor-panel .hrm-checks label{font-size:10px;color:#a5c1d6;display:flex;gap:3px;align-items:center}
+#hardware-resource-monitor-panel .hrm-checks input{accent-color:#159bdf;margin:0;width:12px;height:12px}
+#hardware-resource-monitor-panel .hrm-diagnostic{color:#8eb6d2;font-size:10px;line-height:1.6;background:#1b2d3c;padding:9px;border-radius:5px;margin-top:14px;overflow-wrap:anywhere}
+#hardware-resource-monitor-panel .hrm-help{font-size:10px;line-height:1.8;color:#7f9eb6}
+#hardware-resource-monitor-panel .hrm-footer{display:flex;justify-content:space-between;border-top:1px solid #2c4353;padding-top:11px}
+@media(max-width:600px){#hardware-resource-monitor-panel .hrm-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#hardware-resource-monitor-panel .hrm-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-#hardware-resource-monitor .hrm-card[data-metric="gpu"] svg{grid-row:1/3}
-#hardware-resource-monitor .hrm-card[data-metric="gpu"] small{grid-column:1/3;grid-row:3;justify-self:start}
+#hardware-resource-monitor-panel .hrm-heading{cursor:move;touch-action:none;user-select:none}
+#hardware-resource-monitor-panel .hrm-heading button{cursor:pointer}
 
-#hardware-resource-monitor .hrm-card[data-metric="gpu"]{position:relative;grid-template-columns:17px max-content;min-width:0;width:max-content;padding-right:12px!important}
-#hardware-resource-monitor .hrm-card[data-metric="gpu"] .hrm-track{position:absolute;grid-column:auto;grid-row:auto;right:5px;top:50%;transform:translateY(-50%)}
+#hardware-resource-monitor-panel{resize:both;min-width:min(300px,calc(100vw - 16px));min-height:min(220px,calc(100vh - 16px));height:min(680px,calc(100vh - 16px));container-type:inline-size}
+#hardware-resource-monitor-panel::-webkit-resizer{background:linear-gradient(135deg,transparent 45%,#75b0ce 46%,#75b0ce 51%,transparent 52%,transparent 64%,#75b0ce 65%,#75b0ce 70%,transparent 71%)}
+@container(max-width:480px){#hardware-resource-monitor-panel .hrm-grid{grid-template-columns:repeat(2,minmax(0,1fr))}#hardware-resource-monitor-panel [data-group="disk"]{grid-template-columns:minmax(0,1fr)}#hardware-resource-monitor-panel .hrm-checks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-#hardware-resource-monitor .hrm-tools:hover{background:rgba(80,160,210,.1)}
+#hardware-resource-monitor-panel{--hrm-font:12px;font-size:var(--hrm-font)}
+#hardware-resource-monitor-panel .hrm-group{padding:12px;margin:12px 0;background:rgba(255,255,255,.025);border:1px solid #345266;border-radius:7px;cursor:pointer;outline:none}
+#hardware-resource-monitor-panel .hrm-group:hover,#hardware-resource-monitor-panel .hrm-group:focus-visible{border-color:#61b3e5}
+#hardware-resource-monitor-panel .hrm-group[aria-pressed="true"]{border-color:#3daef0;box-shadow:inset 3px 0 #3daef0}
+#hardware-resource-monitor-panel .hrm-group .hrm-section{margin:0 0 10px;font-size:calc(var(--hrm-font)*1.1);font-weight:600}
+#hardware-resource-monitor-panel .hrm-card{background:transparent;border:0;padding:6px 10px 6px 0;border-radius:0}
+#hardware-resource-monitor-panel .hrm-cpu-info{background:transparent;border:0;padding:0 0 8px;font-size:var(--hrm-font)}
+#hardware-resource-monitor-panel .hrm-label,#hardware-resource-monitor-panel .hrm-fields label,#hardware-resource-monitor-panel .hrm-checks label{font-size:calc(var(--hrm-font)*.9)}
+#hardware-resource-monitor-panel .hrm-card strong{font-size:calc(var(--hrm-font)*1.2);line-height:1.65}
+#hardware-resource-monitor-panel .hrm-card small,#hardware-resource-monitor-panel .hrm-heading small{font-size:calc(var(--hrm-font)*.8);line-height:1.6}
+#hardware-resource-monitor-panel .hrm-heading b{font-size:calc(var(--hrm-font)*1.45)}
+#hardware-resource-monitor-panel .hrm-section,#hardware-resource-monitor-panel .hrm-presets button,#hardware-resource-monitor-panel .hrm-footer button{font-size:calc(var(--hrm-font)*.9)}
+#hardware-resource-monitor-panel .hrm-fields select{font-size:inherit;background:rgba(30,60,80,.45)}
+#hardware-resource-monitor-panel .hrm-appearance{align-items:center}
+#hardware-resource-monitor-panel .hrm-appearance input{display:block;margin:6px 0}
+#hardware-resource-monitor-panel .hrm-appearance input[type="color"]{width:48px;height:28px;padding:2px;background:transparent;border:1px solid #456880}
+#hardware-resource-monitor-panel .hrm-chart{margin-top:16px;padding:12px;border:1px solid #345266;border-radius:7px;background:rgba(255,255,255,.02)}
+#hardware-resource-monitor-panel .hrm-chart[hidden]{display:none!important}
+#hardware-resource-monitor-panel .hrm-chart-heading{display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+#hardware-resource-monitor-panel .hrm-chart-heading b{font-size:var(--hrm-font);flex:1}
+#hardware-resource-monitor-panel .hrm-chart-heading select,#hardware-resource-monitor-panel .hrm-chart-heading button{font:inherit;border:1px solid #456880;border-radius:4px;padding:4px;background:#1a3042;color:#b5d5eb;max-width:100%}
+#hardware-resource-monitor-panel .hrm-chart-caption{font-size:calc(var(--hrm-font)*.9);color:#90b4cc;margin:9px 0}
+#hardware-resource-monitor-panel .hrm-chart canvas{display:block;width:100%;height:190px}
+@container(max-width:480px){#hardware-resource-monitor-panel .hrm-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
-#hardware-resource-monitor-panel .hrm-preview{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:6px;border:1px solid #2b4355;border-radius:7px;padding:8px;background:rgba(20,38,54,.35)}
-#hardware-resource-monitor-panel .hrm-preview .hrm-card{display:grid;grid-template-columns:17px minmax(0,1fr) 3px;grid-template-rows:11px 14px 11px;column-gap:4px;row-gap:1px;align-items:center;padding:5px;min-width:0;text-align:left}
-#hardware-resource-monitor-panel .hrm-preview .hrm-label{display:contents}
-#hardware-resource-monitor-panel .hrm-preview .hrm-label span{grid-column:2;grid-row:1;color:#9fbed4;font-size:10px;line-height:11px;white-space:nowrap}
-#hardware-resource-monitor-panel .hrm-preview svg{grid-column:1;grid-row:1/3;width:17px;height:21px;color:var(--accent)}
-#hardware-resource-monitor-panel .hrm-preview strong{grid-column:2;grid-row:2;margin:0;padding:0;font-size:12px;line-height:14px;font-weight:500;color:var(--accent);white-space:nowrap}
-#hardware-resource-monitor-panel .hrm-preview small{grid-column:1/3;grid-row:3;margin:0;padding:0;color:#a2bdd1;font-size:9px;line-height:11px;white-space:nowrap}
-#hardware-resource-monitor-panel .hrm-preview .hrm-track{grid-column:3;grid-row:1/4;position:relative;width:3px;height:36px;overflow:hidden;border-radius:3px;background:#243c50}
-#hardware-resource-monitor-panel .hrm-preview .hrm-track i{display:block;position:absolute;bottom:0;width:100%;background:var(--accent);transition:height .4s}
-#hardware-resource-monitor-panel .hrm-preview .hrm-card[data-preview="gpu"]{grid-column:1/-1}
-#hardware-resource-monitor-panel .hrm-preview .hrm-card[data-preview="gpu"] small{white-space:normal;overflow-wrap:anywhere;height:auto}
+#hardware-resource-monitor-panel .hrm-grid,#hardware-resource-monitor-panel [data-group="disk"]{grid-template-columns:repeat(auto-fit,minmax(min(100%,calc(var(--hrm-font)*9)),1fr))}
+#hardware-resource-monitor-panel .hrm-card[data-id="virtual"]{grid-column:auto}
+#hardware-resource-monitor-panel .hrm-card strong{white-space:normal;overflow-wrap:anywhere}
+
+#hardware-resource-monitor{--hrm-top-font:12px;height:max(60px,calc(var(--hrm-top-font)*4.4))!important}
+#hardware-resource-monitor .hrm-card{grid-template-rows:calc(var(--hrm-top-font)*.917) calc(var(--hrm-top-font)*1.25) calc(var(--hrm-top-font)*.917);min-width:calc(var(--hrm-top-font)*5.5)}
+#hardware-resource-monitor .hrm-label{font-size:calc(var(--hrm-top-font)*.833)!important;line-height:calc(var(--hrm-top-font)*.917)!important}
+#hardware-resource-monitor strong{font-size:var(--hrm-top-font)!important;line-height:calc(var(--hrm-top-font)*1.25)!important}
+#hardware-resource-monitor small{font-size:calc(var(--hrm-top-font)*.75)!important;line-height:calc(var(--hrm-top-font)*.917)!important;height:calc(var(--hrm-top-font)*.917)}
+#hardware-resource-monitor .hrm-track{height:calc(var(--hrm-top-font)*2.917)}
+#hardware-resource-monitor .hrm-settings{font-size:calc(var(--hrm-top-font)*.917)!important;flex-basis:calc(var(--hrm-top-font)*2.75);width:calc(var(--hrm-top-font)*2.75)}
+#hardware-resource-monitor-panel.hrm-dragging,#hardware-resource-monitor-panel.hrm-dragging *{cursor:grabbing!important;user-select:none!important}
+
+#hardware-resource-monitor-panel .hrm-chart{background:rgba(95,100,120,.13);padding:14px}
+#hardware-resource-monitor-panel .hrm-chart canvas{height:240px}
+#hardware-resource-monitor-panel .hrm-chart canvas[hidden]{display:none!important}
+
+#hardware-resource-monitor-panel .hrm-chart{position:relative}
+#hardware-resource-monitor-panel .hrm-chart-tooltip{position:absolute;z-index:4;pointer-events:none;white-space:pre-line;max-width:calc(100% - 8px);padding:7px 9px;border:1px solid #4d809c;border-radius:5px;background:#102330;color:#d6eaff;font-size:var(--hrm-font);line-height:1.6;box-shadow:0 3px 10px #0006}
+#hardware-resource-monitor-panel .hrm-chart-hover-line{position:absolute;z-index:2;width:1px;border-left:1px dashed #8dc8eb;pointer-events:none}
+#hardware-resource-monitor-panel .hrm-chart-hover-dot{position:absolute;z-index:3;width:7px;height:7px;transform:translate(-50%,-50%);border-radius:50%;border:1px solid #e0f4ff;background:#159fff;pointer-events:none}
+#hardware-resource-monitor-panel .hrm-chart-tooltip[hidden],#hardware-resource-monitor-panel .hrm-chart-hover-line[hidden],#hardware-resource-monitor-panel .hrm-chart-hover-dot[hidden]{display:none!important}
